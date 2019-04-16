@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, sans-serif;
+}
+
+caption {
+  background-color: #13475e;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+#month {
+  background-color: #13475e;
+  font-size: 2.50em;
+  color: white;
+  padding-top: 20px;
+  text-align: center;
+}
+
+#year {
+  background-color: #13475e;
+  color: white;
+  text-align: center;
+  font-size: 1.75em;
+  padding-bottom: 20px;
+}
+
+#l-arrow {
+  background-color: #13475e;
+  color: white;
+  text-align: left;
+  font-size: 1.5em;
+  padding-bottom: 20px;
+  padding-right: 700px;
+}
+
+#r-arrow {
+  background-color: #13475e;
+  color: white;
+  text-align: right;
+  font-size: 1.5em;
+  padding-bottom: 20px;
+}
+
+table {
+  height: 600px;
+  width: 840px;
+  background-color: #85ccec;
+  border: thick double #0b2734;
+  /* border-collapse: collapse; */
+}
+
+col.weekend {
+  background-color: #b8b8b8;
+}
+th {
+  width: 13.6%;
+  border-bottom: 10px solid #303030;
+  font-size: 1.05em;
+  padding-top: 30px;
+}
+
+td {
+  color: white;
+  font-size: 3.2em;
+  text-align: center;
+  background-color: #E1F3F7;
+  /* font-size: .75em; */
+  /* text-align: right;
+  /* vertical-align: top; */
+  /* padding-top: 10px;
+  padding-right: 15px; */
+  width: 13.6%;
+}
+
+td.weekend {
+  color: white;
+  font-size: 3.2em;
+  text-align: center;
+  background-color: #ebebeb;
+  /* font-size: .75em;
+  text-align: right;
+  vertical-align: top;
+  padding-top: 10px;
+  padding-right: 15px; */
+  width: 13.6%;
+}
+div.card {
+  background-color: #eeeeee;
+  height: 200px;
+  width: 280px;
+  box-shadow: 5px 5px grey;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: black;
+}
+
+p {
+  font-size: 0.85em;
+  color: black;
+}
+
+h3 {
+  font-size: 1.25em;
+  color: black;
+}
+
+.exit {
+  font-size: .50em;
+}
+ul.w_internal_meeting {
+  font-size: 1.00em;
+  color: white;
+  background: blue;
+}
+
+ul.w_client_meeting {
+  font-size: 1.00em;
+  color: white;
+  background: green;
+}
+
+ul.w_party {
+  font-size: 1.00em;
+  color: black;
+  background: lime;
+}
+
+ul.networking {
+  font-size: 1.00em;
+  color: black;
+  background: orange;
+}
+
+ul.p_meeting {
+  font-size: 1.00em;
+  color: white;
+  background: navy;
+}
+
+ul.p_party {
+  font-size: 1.00em;
+  color: white;
+  background: fuchsia;
+}
+
+ul.p_wellness {
+  font-size: 1.00em;
+  color: black;
+  background: aqua;
+}
+
+ul.s_reminder {
+  font-size: 1.00em;
+  color: white;
+  background: red;
+}
+
+ul.all_day_reminder {
+  font-size: 1.00em;
+  color: white;
+  background: maroon;
+}
+
+ul.birthday {
+  font-size: 1.00em;
+  color: white;
+  background: purple;
+}

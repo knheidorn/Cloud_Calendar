@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  date: 2019-04-14
+  w_internal_meeting: false
+  w_client_meeting: false
+  w_party: false
+  networking: false
+  p_meeting: false
+  p_party: false
+  p_wellness: false
+  s_reminder: false
+  all_day_reminder: false
+  birthday: false
+
+two:
+  title: MyString
+  description: MyText
+  date: 2019-04-14
+  w_internal_meeting: false
+  w_client_meeting: false
+  w_party: false
+  networking: false
+  p_meeting: false
+  p_party: false
+  p_wellness: false
+  s_reminder: false
+  all_day_reminder: false
+  birthday: false
