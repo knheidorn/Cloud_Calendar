@@ -31,8 +31,9 @@ caption {
   color: white;
   text-align: left;
   font-size: 1.5em;
-  padding-bottom: 20px;
-  padding-right: 700px;
+  padding-right: 375px;
+  border: none;
+  background: none;
 }
 
 #r-arrow {
@@ -40,7 +41,9 @@ caption {
   color: white;
   text-align: right;
   font-size: 1.5em;
-  padding-bottom: 20px;
+  padding-left: 375px;
+  border: none;
+  background: none;
 }
 
 table {
@@ -66,6 +69,19 @@ td {
   font-size: 3.2em;
   text-align: center;
   background-color: #E1F3F7;
+  /* font-size: .75em; */
+  /* text-align: right;
+  /* vertical-align: top; */
+  /* padding-top: 10px;
+  padding-right: 15px; */
+  width: 13.6%;
+}
+
+td.empty {
+  color: white;
+  font-size: 3.2em;
+  text-align: center;
+  background-color: #85ccec;
   /* font-size: .75em; */
   /* text-align: right;
   /* vertical-align: top; */

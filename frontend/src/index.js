@@ -1,10 +1,90 @@
 const eventsUrl = "http://localhost:3000/events"
+const today = new Date()
+const currentYear = today.getFullYear()
+const currentMonth = today.getMonth()
+const currentHour = today.getHours()
+const currentMinute = today.getMinutes()
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
+  renderCalendar(currentYear, currentMonth)
+  // renderCalendar(2019, 5)
+
   fetch(eventsUrl)
     .then(response => response.json())
     .then(data => {allAppointments(data)})
+
 })
+
+function renderCalendar(year, month) {
+  let startOfMonth = new Date(year, month).getDay()
+  let numOfDays = 32 - new Date(year, month, 32).getDate()
+  let renderNum = 1
+
+  let tableBody = document.getElementById('table-body')
+  let renderMonth = document.getElementById('month')
+  let renderYear = document.getElementById('year')
+  let leftArrow = document.getElementById('l-arrow')
+  let rightArrow = document.getElementById('r-arrow')
+
+  renderMonth.textContent = months[`${month}`]
+  renderYear.textContent = year
+
+  tableBody.innerHTML = ""
+
+  leftArrow.addEventListener('click', (ev) => {
+    ev.preventDefault()
+    previousMonth(year, month)
+  })
+
+  rightArrow.addEventListener('click', (ev) => {
+    ev.preventDefault()
+    nextMonth(year, month)
+  })
+
+  for (i=0; i<6; i++) {
+    let row = document.createElement('tr')
+    for (c=0; c<7; c++) {
+      if (i===0 && c<startOfMonth) {
+        let td = document.createElement('td')
+        td.classList.add('empty')
+        row.append(td)
+      } else if (renderNum > numOfDays) {
+        break
+      } else {
+        let td = document.createElement('td')
+        td.textContent = renderNum
+        row.append(td)
+        renderNum++
+      }
+    }
+    tableBody.append(row)
+  }
+}
+
+function nextMonth(year, month) {
+  let nextM = month + 1
+  if (nextM === 12) {
+    let newM = 0
+    let nextY = year + 1
+    renderCalendar(nextY, newM)
+  } else {
+    renderCalendar(year, nextM)
+  }
+}
+
+function previousMonth(year, month) {
+  let previousM = month - 1
+  if (previousM === -1) {
+    let newPM = 11
+    let previousY = year - 1
+    renderCalendar(previousY, newPM)
+  } else {
+    renderCalendar(year, previousM)
+  }
+}
 
 function allAppointments(appts) {
   appts.forEach(appointment => {
