@@ -1,24 +1,34 @@
-# README
+# Cloud Calendar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## By Kim Heidorn
+___
+This is a functional shared calendar that can be used to keep track of
+appointments. Clicking on the individual date tiles pops-up the
+day's appointments, which can be edited or deleted from this page. Toggling between
+the months is achieved by clicking on the names to the right and left of t
+he rendered calendar. On the bottom section of the calendar is a drop down to jump
+to specific months or years. The plus sign in the bottom right allows for the addition
+of new appointments.
 
-Things you may want to cover:
+This program was built out using vanilla Javascript. One long term goal is to add
+user authentication to enable the calendar for personal use.
+___
+### How to Run for Local Use
 
-* Ruby version
+1. Clone the repository to your local machine.
+2. Using your terminal, navigate to the "backend" directory.
+3. Run `bundle install` to download the required gem files.
+4. Run `rake db:migrate` and `rake db:seed` to build tables and populate the database.
+5. Run `npm install -g json-server` and ` json-server --watch db.json` to build tables and populate the database.
+6. Finally, open the `index.html` in a browser.
+___
+### Disclaimer:
 
-* System dependencies
+All celebrity profiles are not real and are generated for demo purposes only.
 
-* Configuration
+Learn.co Educational Content License
+Copyright (c) 2015 Flatiron School, Inc
 
-* Database creation
+The Flatiron School, Inc. owns this Educational Content. However, the Flatiron School supports the development and availability of educational materials in the public domain. Therefore, the Flatiron School grants Users of the Flatiron Educational Content set forth in this repository certain rights to reuse, build upon and share such Educational Content subject to the terms of the Educational Content License set forth here (http://learn.co/content-license). You must read carefully the terms and conditions contained in the Educational Content License as such terms govern access to and use of the Educational Content.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Flatiron School is willing to allow you access to and use of the Educational Content only on the condition that you accept all of the terms and conditions contained in the Educational Content License set forth here (http://learn.co/content-license). By accessing and/or using the Educational Content, you are agreeing to all of the terms and conditions contained in the Educational Content License. If you do not agree to any or all of the terms of the Educational Content License, you are prohibited from accessing, reviewing or using in any way the Educational Content.

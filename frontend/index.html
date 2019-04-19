@@ -2,6 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Mod 3 Final Solo Project</title>
 
     <script defer src="src/index.js" charset="utf-8"></script>
@@ -9,74 +12,175 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <table>
-      <caption><span id="month">June</span><br>
-        <span id="l-arrow"><</span><span id="r-arrow">></span>
-        <br>
-        <span id="year">2019</span>
-      </caption>
+    <div class="row justify-content-center">
+      <table class="table-hover">
+        <thead>
+          <tr>
+            <th id="month" colspan="7"></th>
+          </tr>
+          <tr>
+            <th id="l-arrow" colspan="3"><</th>
+            <th id="year" colspan="1"></th>
+            <th id="r-arrow" colspan="3">></th>
+          </tr>
+          <tr>
+            <th id="year" colspan="7"></th>
+          </tr>
+          <tr>
+            <th class="days">Sun</th>
+            <th class="days">Mon</th>
+            <th class="days">Tue</th>
+            <th class="days">Wed</th>
+            <th class="days">Thurs</th>
+            <th class="days">Fri</th>
+            <th class="days">Sat</th>
+          </tr>
+        </thead>
 
-      <col class="weekend">
-      <col class="weekday" span="5">
-      <col class="weekend">
-      <thead>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thurs</th>
-        <th>Fri</th>
-        <th>Sat</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="weekend">1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td class="weekend">7</td>
-        </tr>
-        <tr>
-          <td class="weekend">8</td>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-          <td>13</td>
-          <td class="weekend">14</td>
-        </tr>
-        <tr>
-          <td class="weekend">15</td>
-          <td>16</td>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-          <td>20</td>
-          <td class="weekend">21</td>
-        </tr>
-        <tr>
-          <td class="weekend">22</td>
-          <td>23</td>
-          <td>24</td>
-          <td>25</td>
-          <td>26</td>
-          <td>27</td>
-          <td class="weekend">28</td>
-        </tr>
-        <tr>
-          <td class="weekend">29</td>
-          <td>30</td>
-          <td>31</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td class="weekend"></td>
-        </tr>
-      </tbody>
-    </table>
-    <div id="event-zoom">
+        <tbody id="table-body">
+        </tbody>
+        <caption>
+
+
+
+          <form class="form-jump">
+            <select id="jumpMonth" name="jumpMonth" onchange="toggleCalendar()">
+            </select>
+
+            <select id="jumpYear" name="jumpYear" onchange="toggleCalendar()">
+            </select>
+
+            <button id="add-event" type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#AddEvent">+</button>
+          </form>
+
+        </caption>
+      </table>
+
+      <div class="modal fade" id="AddEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addEventForm">Add Event</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form name="event-form" id="event-form">
+                <label for="title">Title</label>
+                <br>
+                <input type="text" id="f-title" name="new-title" placeholder="Enter Title...">
+                <br>
+                <label for="description">Description</label>
+                <br>
+                <textarea type="text" id="f-description" name="new-description" placeholder="Enter Details..."></textarea>
+                <br>
+                <label for="date">Date & Time</label>
+                <br>
+                <input type="datetime-local" name="new-date" id="f-date">
+                <br>
+                <br>
+                <select id="f-classification" name="appt-type">
+
+                  <optgroup label="Work">
+                    <option value="w_internal_meeting">Internal Meeting</option>
+                    <option value="w_client_meeting">Client Meeting</option>
+                    <option value="w_party">Work Event</option>
+                    <option value="networking">Networking Event</option>
+                  </optgroup>
+                  <optgroup label="Personal">
+                    <option value="p_meeting">Meeting</option>
+                    <option value="p_party">Party / Event</option>
+                    <option value="p_wellness">Wellness / Medical</option>
+                  </optgroup>
+                  <optgroup label="General">
+                    <option value="s_reminder">General Reminder</option>
+                    <option value="all_day_reminder">All Day Reminder</option>
+                    <option value="birthday">Birthday</option>
+                  </optgroup>
+
+                </select>
+                <br>
+                <br>
+                <input type="submit" name="submit" id="submit-btn" class="btn btn-primary" data-dismiss="modal">
+              </form>
+
+            </div>
+        </div>
+      </div>
     </div>
+    </div>
+    <div class="modal fade" id="AllEvents" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="allEventsTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="event-zoom" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="EditEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editEventForm">Edit Event</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form name="event-form" id="event-form">
+              <label for="title">Title</label>
+              <br>
+              <input type="text" id="e-title" name="new-title">
+              <br>
+              <label for="description">Description</label>
+              <br>
+              <textarea type="text" id="e-description" name="new-description" value=""></textarea>
+              <br>
+              <label for="date">Date & Time</label>
+              <br>
+              <input type="datetime-local" name="new-date" id="e-date">
+              <br>
+              <br>
+              <select id="e-classification" name="appt-type">
+
+                <optgroup label="Work">
+                  <option value="w_internal_meeting">Internal Meeting</option>
+                  <option value="w_client_meeting">Client Meeting</option>
+                  <option value="w_party">Work Event</option>
+                  <option value="networking">Networking Event</option>
+                </optgroup>
+                <optgroup label="Personal">
+                  <option value="p_meeting">Meeting</option>
+                  <option value="p_party">Party / Event</option>
+                  <option value="p_wellness">Wellness / Medical</option>
+                </optgroup>
+                <optgroup label="General">
+                  <option value="s_reminder">General Reminder</option>
+                  <option value="all_day_reminder">All Day Reminder</option>
+                  <option value="birthday">Birthday</option>
+                </optgroup>
+
+              </select>
+              <br>
+              <br>
+              <input type="submit" name="submit" id="sub-edit" class="btn btn-primary" data-dismiss="modal">
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
