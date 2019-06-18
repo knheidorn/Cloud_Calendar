@@ -18,9 +18,8 @@ ___
 1. Clone the repository to your local machine.
 2. Using your terminal, navigate to the "backend" directory.
 3. Run `bundle install` to download the required gem files.
-4. Run `rake db:migrate` and `rake db:seed` to build tables and populate the database.
-5. Run `npm install -g json-server` and ` json-server --watch db.json` to build tables and populate the database.
-6. Finally, open the `index.html` in a browser.
+4. Run `npm install -g json-server` and ` json-server --watch db.json` to build tables and populate the database.
+5. Finally, open the `index.html` in a browser.
 ___
 ### Disclaimer:
 
