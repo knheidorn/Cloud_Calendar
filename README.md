@@ -21,7 +21,11 @@ ___
 4. Run `npm install -g json-server` and ` json-server --watch db.json` to build tables and populate the database.
 5. Finally, open the `index.html` in a browser.
 ___
-### Disclaimer:
+### Demo
+
+![Calendar Demo Gif](demo/CalendarDemo.gif)
+___
+### Legal Disclaimer
 
 All celebrity profiles are not real and are generated for demo purposes only.
 
