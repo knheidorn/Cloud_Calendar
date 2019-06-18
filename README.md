@@ -23,7 +23,7 @@ ___
 ___
 ### Demo
 
-![Calendar Demo Gif](https://drive.google.com/file/d/1apaMGLdiZFmaneNLvQM-xKU8ajJqIvTO/view)
+https://drive.google.com/file/d/1apaMGLdiZFmaneNLvQM-xKU8ajJqIvTO/view
 ___
 ### Legal Disclaimer
 
