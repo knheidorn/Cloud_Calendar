@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    render json: @game, status: :accepted
   end
 
   def new
@@ -14,7 +15,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = Event.create(event_params)
     if @event.save
       render json: @event, status: :accepted
     else
@@ -23,6 +24,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+    render json: @game, status: :accepted
   end
 
   def update
@@ -50,7 +52,6 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
-    render json: @event
   end
 
 end

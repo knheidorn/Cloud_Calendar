@@ -171,15 +171,17 @@ function previousMonth(year, month) {
 }
 
 //storing new events/Appointments - Triggering event on submit
-let submitB = document.getElementById('submit-btn')
-submitB.addEventListener('click', (ev) => {
-  ev.preventDefault(),
-  storeNewEvent()
-})
+// let submitB = document.getElementById('submit-btn')
+// submitB.addEventListener('click', (ev) => {
+//   console.log('ive been pushed')
+//   ev.preventDefault()
+//   storeNewEvent()
+// })
 
 //compiling data for fetch request to add new event
 
 function storeNewEvent() {
+  console.log('in store event')
   let title = document.getElementById('f-title')
   let description = document.getElementById('f-description')
   let date = document.getElementById('f-date')
@@ -354,7 +356,7 @@ function popUpEventModal(appt) {
   let title = document.getElementById('e-title')
   let description = document.getElementById('e-description')
   let date = document.getElementById('e-date')
-  // let appt = document.getElementById('f-classification')
+  // let appt = document.getElementById('e-classification')
   let id = appt.id
   let eTitle = appt.title
   eDesc = appt.description

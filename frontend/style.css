@@ -89,12 +89,8 @@ th.days {
 }
 
 .table-hover>tbody>tr>td:hover, .table-hover>tbody>tr>td:hover{
-        background-color: #fabb77!important;
+        background-color: #fabb77;
     }
-
-/* .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th{
-        background-color: #feecd9;
-    } */
 
 td {
   color: white;
@@ -118,7 +114,7 @@ td.empty {
   color: white;
   font-size: 3.2em;
   text-align: center;
-  background-color: #85ccec;
+  background-color: #85ccec!important;
   width: 13.6%;
 }
 
